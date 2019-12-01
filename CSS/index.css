@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css?family=Volkhov&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Suranna&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200&display=swap');
+
+
+html{
+    margin: 0;  
+    padding: 0;
+    font-size: 62.5%;
+    font: inherit;
+    border: none;
+    vertical-align: baseline;
+    box-sizing: content-box;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body{
+    background-image: url(../Images/landing-image.jpg);
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+}
+header{
+    margin: 0;
+}
+.navbar-list{
+    height: 6vh;
+    position: relative;
+    margin: 0;
+    color: white;
+    font-family: 'Volkhov';
+    font-weight: 400;
+    border: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+
+.btn{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.login-btn{
+    font: inherit;
+    border: none;
+    color: black;
+    width: 150px;
+    height: 100%;
+    background-color: white;
+}
+
+.subscribe-btn{
+    border: none;
+    font: inherit;
+    color: white;
+    width: 150px;
+    height: 100%;
+    background-color: #B70000 ;
+}
+
+.licencing{
+    margin-left: 200px
+}
+
+.about-us{
+    margin-right: 200px;
+}
+
+.container-left{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.404);
+    height: 100vh;
+    width: 100vw;
+}
+
+.title{
+    font-family: 'suranna';
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    
+}
+
+.main-title{
+    font-size: 144px;
+    color: rgb(214, 214, 214);
+    height: 80px;
+    font-weight: 400;
+}
+
+.red-nine{
+    color: #B70000;
+}
+
+.title-under{
+    font-size: 64px ;
+    color: white;
+    font-weight: 400;
+}
+
+.news-info{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    width: 500px;
+    height: 97px;
+    border: 1px solid white;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    padding-left: 20px;
+}
+
+.news-info_place{
+    font-family: 'suranna';
+    font-size: 64px;
+    font-weight: 100;
+}
+
+.news-info_text{
+    font-family: 'montserrat';
+    font-size: 14px;
+    font-weight: 200;
+    margin: 0;
+    margin-left: 10%;
+    transform: translateY(20%);
+
+}
+
+.news-info_text span{
+    font-family: 'volkhov';
+    color: rgb(207, 2, 2);
+}
+
+.news-info_red-box{
+    height: 25px;
+    width: 45px;
+    background-color: rgb(207, 2, 2);
+}
+
+.container-right{
+    border: 1px solid white;
+    position: absolute;
+    right: 0;
+    bottom: 6px;
+    background-color: rgba(158, 158, 158, 0.082);
+    height: 93vh;
+    width: 4vw;
+
+
+}
+
+.fab{
+    width: 100%;
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.801);
+    text-align: center;
+}
+
+.social-icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 35%;
+    margin-top: 80px;
+}
