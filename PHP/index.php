@@ -16,11 +16,12 @@
     <li class='nav-link licencing'>Licencing</li>
     <li class='nav-link about-us'>About us</li>
     <li class='btn'>
-        <button class='login-btn'>Login</button>
-        <button class='subscribe-btn'>Subscribe</button>
+        <a href="./login.php" class='login-btn'>Login</a>
+        <a href="./subscribe.php" class='subscribe-btn'>Subscribe</a>
+        
     </li>
     </ul>
-    </nav>
+    </nav>25%
     </header>
     <main>
     <div class='container'>
@@ -56,6 +57,7 @@
 
     </main>
 
-    
+
 </body>
 </html>
+

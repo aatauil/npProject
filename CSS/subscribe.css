@@ -26,6 +26,9 @@ body{
 }
 
 .back-btn{
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
     font-family: inherit;
     font-weight: inherit;
     position: absolute;
@@ -71,7 +74,7 @@ body{
 }
 
 .subscribe-section{
-    left: 50%;
+    left: 45%;
     top: 45%;
     width: 500px;
     height: 450px;
@@ -87,10 +90,10 @@ body{
     width: 100%;
     display: grid;
     column-gap: 20px;
-    row-gap: 20px;
+    row-gap: 22px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "facebook-login google-login" "split-line split-line" "input-name input-lastname" "input-email input-email" "input-tel input-tel" "checkbox-privacy checkbox-privacy" "submit-form submit-form";
+    grid-template-areas: "facebook-login google-login" "split-line split-line" "input-name input-lastname" "input-email input-email" "input-password input-password" "checkbox-privacy checkbox-privacy" "submit-form submit-form";
     
     }
 .form-grid::-webkit-input-placeholder{
@@ -150,8 +153,9 @@ body{
     grid-area: input-email; 
 }
 
-.input-tel { 
-    grid-area: input-tel; 
+
+.input-password {
+    grid-area: input-password;
 }
 
 .checkbox-privacy { 
@@ -192,10 +196,10 @@ body{
     background-color: rgba(0, 0, 0, 0.199);
     position: absolute;
     top: 73%;
-    left: 50%;
+    left: 45%;
     height: 100px;
     width: 800px;
-    transform: translateX(-39%)
+    transform: translateX(-40%)
 }
 
 .quote-text{

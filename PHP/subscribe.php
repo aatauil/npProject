@@ -13,9 +13,9 @@
 <body>
     <header>
         <nav class='nav-back'>
-            <button class="back-btn">
+            <a href="./index.php" class="back-btn">
                 <span back-btn_text>Back to home</span><i class="fas fa-caret-right"></i>
-            </button></nav>
+            </a></nav>
     </header>
     <main>
         <div class='Logo'><img src="../Images/side-logo.svg" alt="logo on its side"></div>
@@ -24,7 +24,7 @@
         <h1 class='title-subscribe'>Subscribe</h1>
     </main>
     <section class='subscribe-section'>
-        <form action="#" class='form-grid'>
+        <form action="login.php" method="post" class='form-grid'>
             <button class='facebook-login'></button>
             <button class='google-login'></button>
             <div class='grid split-line'> <div class="line"></div> <span class='line-or'>or</span>  <div class='line'></div></div>
