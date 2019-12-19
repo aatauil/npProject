@@ -3,8 +3,8 @@
 
 $i = 0;
 $curl = curl_init();
-$category = "business";
 $category = $_GET['category'];
+
 
 curl_setopt_array($curl, array(
   CURLOPT_URL => "https://newsapi.org/v2/top-headlines?country=us&category={$category}&apiKey=3962521e87814dfa8d9cf035000bf10e",
@@ -45,7 +45,7 @@ if ($err) {
     <button class="menu-button"></button>
     <div class="left-menu-name-container">
         <span class="name-decoration"></span>
-        <h2 class='userName'><br> <?php $sessionName ?></h2>
+        <h2 class='userName'><br>Welcome</h2>
 
         <ul class="menu-list">
             <li class="menu-item"><a href="./dasboard.php?category=business">Business</a></li>

@@ -19,7 +19,7 @@ if (isset($_POST['submit'])){
             $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
             mysqli_stmt_bind_param($stmt , "ssss", $name, $lastname, $email, $hashedPwd);
             mysqli_stmt_execute($stmt);
-            header("Location: ../dasboard.php?name=$name");
+            header("Location: ../dasboard.php?category=business");
             exit();
         }
     
@@ -31,3 +31,6 @@ if (isset($_POST['submit'])){
 
 
 ?>
+
+
+

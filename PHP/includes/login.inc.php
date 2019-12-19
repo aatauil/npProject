@@ -8,7 +8,7 @@ if (isset($_POST['login-submit'])){
     $loginPass = $_POST['login-password'];
 
     $sql = "SELECT * FROM user WHERE dbEmail = ?";
-    $name = "SELECT dbName FROM user WHERE dbEmail = ?";
+  
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         header("Location: login.php.error=sqlerror");
@@ -16,16 +16,16 @@ if (isset($_POST['login-submit'])){
     } else {
         mysqli_stmt_bind_param($stmt, "s", $loginMail);
         mysqli_stmt_execute($stmt);
+        
         $result = mysqli_stmt_get_result($stmt);
 
         if ($row = mysqli_fetch_assoc($result)){
             $pwdCheck = password_verify($loginPass, $row['dbPassword']);
             if ($pwdCheck == false) {
-                header('Location: ../login.php?error=wrongpwd');
+                header('Location: ../login.php?error=wrongpwd?name=$name');
                 exit();
             } else if($pwdCheck == true) {
-
-                header("Location: ../dasboard.php");
+                header("Location: ../dasboard.php?category=business");
             } else {
                 header('Location: ../login.php?error=wrongpwd');
                 exit();
@@ -39,7 +39,7 @@ if (isset($_POST['login-submit'])){
     }
 
 } else {
-    header("Location: login.php");
+    header("Location: login.php?error=fatalerror");
 }
 
 ?>
