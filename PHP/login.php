@@ -1,3 +1,5 @@
+<?php include('./includes/login.inc.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,15 +26,15 @@
         <h1 class='title-subscribe'>Login</h1>
     </main>
     <section class='subscribe-section'>
-        <form action="#" method="post" class='form-grid'>
+        <form action="includes/login.inc.php" method="post" class='form-grid'>
             <button class='facebook-login'></button>
             <button class='google-login'></button>
             <div class='grid split-line'> <div class="line"></div> <span class='line-or'>or</span>  <div class='line'></div></div>
-            <input type="email" placeholder="Email" class='pt input-email'>
-            <input type="password" placeholder="Password" name="password" class="pt input-password">
+            <input type="email" required name="login-email" placeholder="Email" class='pt input-email'>
+            <input type="password" required placeholder="Password" name="login-password" class="pt input-password">
             <div class="checkbox-privacy">
             <input type="checkbox" name="privacy" class='checkbox-box' ><span class='privacy-text'> Remember Password.</span></div>
-            <button  type="submit" class="submit-form">Login</button> 
+            <button  type="submit" name='login-submit' class="submit-form">Login</button> 
         </form>
     </section>
     <section class="quote">

@@ -1,9 +1,13 @@
 <?php 
 
+
+$i = 0;
 $curl = curl_init();
+$category = "business";
+$category = $_GET['category'];
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://newsapi.org/v2/top-headlines?country=be&apiKey=3962521e87814dfa8d9cf035000bf10e",
+  CURLOPT_URL => "https://newsapi.org/v2/top-headlines?country=us&category={$category}&apiKey=3962521e87814dfa8d9cf035000bf10e",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -14,18 +18,15 @@ curl_setopt_array($curl, array(
 ));
 
 $response = curl_exec($curl);
-$response = $response.json_decode();
+$response = json_decode(curl_exec($curl),true);
 $err = curl_error($curl);
 
 curl_close($curl);
 
 if ($err) {
   echo "cURL Error #:" . $err;
-} else {
-  echo $response[0];
-  $articles = $newsContent['articles'];
+} 
 
-}
 
 ?>
 
@@ -44,13 +45,15 @@ if ($err) {
     <button class="menu-button"></button>
     <div class="left-menu-name-container">
         <span class="name-decoration"></span>
-        <h2 class='userName'><br>Achraf Atauil</h2>
+        <h2 class='userName'><br> <?php $sessionName ?></h2>
 
         <ul class="menu-list">
-            <li class="menu-item"><a href="">Politics</a></li>
-            <li class="menu-item"><a href="">Economics</a></li>
-            <li class="menu-item"><a href="">Finance</a></li>
-            <li class="menu-item"><a href="">Global</a></li>
+            <li class="menu-item"><a href="./dasboard.php?category=business">Business</a></li>
+            <li class="menu-item"><a href="./dasboard.php?category=Health">Health</a></li>
+            <li class="menu-item"><a href="./dasboard.php?category=Science">Science</a></li>
+            <li class="menu-item"><a href="./dasboard.php?category=Sports">Sports</a></li>
+            <li class="menu-item"><a href="./dasboard.php?category=Entertainment">Entertainment</a></li>
+            <li class="menu-item"><a href="./dasboard.php?category=Technology">Technology</a></li>
             
         </ul>
         <div class="menu-buttons">
@@ -66,11 +69,13 @@ if ($err) {
 
 <section class="right-content">
     
-<?php foreach( $response as $element):?>
-    <article style="background-image: url('https://static01.nyt.com/images/2019/12/12/world/12uk-briefing11a/12uk-briefing11a-facebookJumbo.jpg')">
-    <h1>{{$element[]</h1>
-    </article>
-<?php endforeach?>
+<?php 
+    for( $i=0; $i < sizeof($response['articles']); $i++):?>
+        <article  style="background-image: url('<?php print_r($response['articles'][$i]['urlToImage']) ?>')">
+            <h1> <?php print_r($response['articles'][$i]['title']);?> </h1>
+            <a class="read-more" href="<?php print_r($response['articles'][$i]['url']) ?>">Read more</a>
+        </article>
+    <?php endfor?>
 </section>
 
 
@@ -78,4 +83,5 @@ if ($err) {
 
 <script src="../JS/dashboard.js"></script>
 </html>
+
 <!-- API-KEY = 33962521e87814dfa8d9cf035000bf10e962521e87814dfa8d9cf035000bf10e -->

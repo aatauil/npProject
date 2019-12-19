@@ -8,9 +8,11 @@ window.onload = function () {
         console.log("");
         if (menuOpen == true) {
             leftMenu.style.transform = "translateX(-90%)";
+            rightContent.style.width = "93%";
             menuOpen = false;
         } else if (menuOpen == false) {
             leftMenu.style.transform = "translateX(0%)";
+            rightContent.style.width = "70%";
             menuOpen = true;
         }
     });

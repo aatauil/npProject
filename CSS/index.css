@@ -179,3 +179,24 @@ header{
     height: 35%;
     margin-top: 80px;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+background: black;
+}
+
+
+::-webkit-scrollbar-thumb {
+background: #B70000;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+background: rgba(110, 110, 110, 0.452);
+
+
+}

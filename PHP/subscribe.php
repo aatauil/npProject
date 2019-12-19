@@ -24,19 +24,20 @@
         <h1 class='title-subscribe'>Subscribe</h1>
     </main>
     <section class='subscribe-section'>
-        <form action="login.php" method="post" class='form-grid'>
+        <form action="includes/subscribe.inc.php" method="post" class='form-grid'>
             <button class='facebook-login'></button>
             <button class='google-login'></button>
             <div class='grid split-line'> <div class="line"></div> <span class='line-or'>or</span>  <div class='line'></div></div>
-            <input type="text" placeholder="Name" class='pt input-name'>
-            <input type="text" placeholder="Lastname" class='pt input-lastname'>
-            <input type="email" placeholder="Email" class='pt input-email'>
-            <input type="password" placeholder="Password" name="password" class="pt input-password">
-            <div class="checkbox-privacy">
-            <input type="checkbox" name="privacy" class='checkbox-box' ><span class='privacy-text'> I agree that this information will be stored for reasons listed in the general terms.</span></div>
-            <button  type="submit" class="submit-form">Register</button> 
+            <input type="text" required placeholder="name" name="name" class='pt input-name'>
+            <input type="text" required placeholder="lastname" name="lastname" class='pt input-lastname'>
+            <input type="email" required placeholder="email" name="email" class='pt input-email'>
+            <input type="password" required placeholder="Password" name="password" class="pt input-password">
+            <div class="checkbox-privacy" required>
+            <input type="checkbox" name="privacy" required class='checkbox-box' ><span class='privacy-text'> I agree that this information will be stored for reasons listed in the general terms.</span></div>
+            <button  type="submit" name="submit" class="submit-form">Register</button> 
         </form>
     </section>
+    <?php include ('errors.inc.php'); ?>
     <section class="quote">
         <p class="quote-text">“Reading furnishes the mind only with materials of knowledge; it is thinking that makes what we read ours.” <br>
 ― John Locke</p>
